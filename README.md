@@ -1,5 +1,3 @@
-# In gitHub opne file using Code or Blame, not preview
-
 # Redis communication support projcet
 
 This project provides a Redis manager solution designed to help developers interact 
@@ -28,16 +26,7 @@ Unit tests using xUnit framework to ensure the Redis manager works as expected.
 Tests the fake Redis manager to simulate Redis behavior and validate the functionality of your application.
 
 #Architecture Overview:
-RedisSolution/
-├── RedisSolution/
-│   ├── Utils/
-│   │   ├── Interfaces/
-│   │   │   └── IRedisManager.cs         # Interface defining the contract for Redis operations, ensuring loose coupling.
-│   │   ├── FakeRedisManager.cs          # Mock implementation of the Redis manager for testing purposes.
-│   │   └── RedisManager.cs              # Real implementation of the Redis manager using StackExchange.Redis to interact with a Redis server.
-│   └── Program.cs                       # Main entry point of the application, initializing and demonstrating the usage of the Redis manager.
-└── XunitTestRedis/
-    └── FakeRedisManagerTest.cs          # Unit tests for the fake Redis manager, ensuring that the mock behaves as expected.
+
 Components Explained
 Utils/Interfaces/IRedisManager.cs:
 
@@ -83,3 +72,15 @@ Testing with xUnit:
 The FakeRedisManagerTest class contains unit tests for the fake Redis manager.
 Use these tests to verify that the fake manager behaves as expected and your application's logic works correctly with Redis-like behavior.
 Run the tests using xUnit to ensure the reliability and correctness of your Redis integration.
+
+```bash
+RedisSolution/
+├── RedisSolution/
+│   ├── Utils/
+│   │   ├── Interfaces/
+│   │   │   └── IRedisManager.cs         # Interface defining the contract for Redis operations, ensuring loose coupling.
+│   │   ├── FakeRedisManager.cs          # Mock implementation of the Redis manager for testing purposes.
+│   │   └── RedisManager.cs              # Real implementation of the Redis manager using StackExchange.Redis to interact with a Redis server.
+│   └── Program.cs                       # Main entry point of the application, initializing and demonstrating the usage of the Redis manager.
+└── XunitTestRedis/
+    └── FakeRedisManagerTest.cs          # Unit tests for the fake Redis manager, ensuring that the mock behaves as expected.
