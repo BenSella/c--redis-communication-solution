@@ -1,6 +1,6 @@
 # In gitHub opne file using Code or Blame, not preview
 
-# Redis projcet
+# Redis communication support projcet
 
 This project provides a Redis manager solution designed to help developers interact 
 with a Redis server by offering utilities to write, retrieve, and execute commands on Redis. 
