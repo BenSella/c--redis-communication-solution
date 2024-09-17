@@ -73,6 +73,7 @@ The FakeRedisManagerTest class contains unit tests for the fake Redis manager.
 Use these tests to verify that the fake manager behaves as expected and your application's logic works correctly with Redis-like behavior.
 Run the tests using xUnit to ensure the reliability and correctness of your Redis integration.
 
+# Project Architecture
 ```bash
 RedisSolution/
 ├── RedisSolution/
