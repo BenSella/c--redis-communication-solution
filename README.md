@@ -11,12 +11,11 @@ enabling developers to simulate Redis operations without requiring a real Redis 
 This is particularly useful for unit testing, using xUnit as the testing framework.
 
 Real Redis Integration:
-
 Connect to an actual Redis server.
 Perform standard Redis operations like writing, retrieving, and deleting data.
 Utilize the StackExchange.Redis library for robust and efficient Redis communication.
-Fake Redis Implementation:
 
+Fake Redis Implementation:
 Simulate Redis operations in a testing environment.
 Provides the ability to test Redis-dependent functionalities without the need for an actual Redis instance.
 Ensures unit tests are isolated, reliable, and easy to run.
@@ -26,6 +25,20 @@ Unit tests using xUnit framework to ensure the Redis manager works as expected.
 Tests the fake Redis manager to simulate Redis behavior and validate the functionality of your application.
 
 #Architecture Overview:
+
+# Project Architecture
+```bash
+RedisSolution/
+├── RedisSolution/
+│   ├── Utils/
+│   │   ├── Interfaces/
+│   │   │   └── IRedisManager.cs         # Interface defining the contract for Redis operations, ensuring loose coupling.
+│   │   ├── FakeRedisManager.cs          # Mock implementation of the Redis manager for testing purposes.
+│   │   └── RedisManager.cs              # Real implementation of the Redis manager using StackExchange.Redis to interact with a Redis server.
+│   └── Program.cs                       # Main entry point of the application, initializing and demonstrating the usage of the Redis manager.
+└── XunitTestRedis/
+    └── FakeRedisManagerTest.cs          # Unit tests for the fake Redis manager, ensuring that the mock behaves as expected.
+```
 
 Components Explained
 Utils/Interfaces/IRedisManager.cs:
@@ -72,16 +85,3 @@ Testing with xUnit:
 The FakeRedisManagerTest class contains unit tests for the fake Redis manager.
 Use these tests to verify that the fake manager behaves as expected and your application's logic works correctly with Redis-like behavior.
 Run the tests using xUnit to ensure the reliability and correctness of your Redis integration.
-
-# Project Architecture
-```bash
-RedisSolution/
-├── RedisSolution/
-│   ├── Utils/
-│   │   ├── Interfaces/
-│   │   │   └── IRedisManager.cs         # Interface defining the contract for Redis operations, ensuring loose coupling.
-│   │   ├── FakeRedisManager.cs          # Mock implementation of the Redis manager for testing purposes.
-│   │   └── RedisManager.cs              # Real implementation of the Redis manager using StackExchange.Redis to interact with a Redis server.
-│   └── Program.cs                       # Main entry point of the application, initializing and demonstrating the usage of the Redis manager.
-└── XunitTestRedis/
-    └── FakeRedisManagerTest.cs          # Unit tests for the fake Redis manager, ensuring that the mock behaves as expected.
